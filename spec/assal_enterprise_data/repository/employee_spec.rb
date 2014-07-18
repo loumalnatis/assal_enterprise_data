@@ -7,7 +7,12 @@ describe AssalEnterpriseData::Repository::Employee do
     emp_first_name: "First",
     emp_last_name:  "Last",
     emp_mi:          nil,
-    emp_id:          "123"
+    emp_id:          "123",
+    emp_rate1:       1.00,
+    emp_rate2:       2.00,
+    emp_rate3:       3.00,
+    emp_rate4:       4.00,
+    emp_rate5:       5.00
   } }
 
   let(:dataset) { TestDBConnection.dataset.from(:emp) }
@@ -18,6 +23,11 @@ describe AssalEnterpriseData::Repository::Employee do
       dataset << record1
       employee = subject.find_by_employee_id('123')
       employee.emp_first_name == 'First'
+      employee.emp_rate1 == 1.00
+      employee.emp_rate2 == 2.00
+      employee.emp_rate3 == 3.00
+      employee.emp_rate4 == 4.00
+      employee.emp_rate5 == 5.00
     end
   end
 end
