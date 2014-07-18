@@ -1,6 +1,6 @@
 module AssalEnterpriseData
   module Context
-    class FindEmployeeName
+    class FindEmployee
       def initialize(employee_repo)
         @employee_repo = employee_repo
       end
