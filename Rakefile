@@ -9,5 +9,3 @@ namespace :bundler do
     require 'bundler/setup'
   end
 end
-
-task :default => [:spec]

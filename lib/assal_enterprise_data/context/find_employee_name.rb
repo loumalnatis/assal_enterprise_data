@@ -6,7 +6,7 @@ module AssalEnterpriseData
       end
 
       def call(employee_id)
-
+        employee_repo.find_by_employee_id(employee_id)
       end
 
       private
