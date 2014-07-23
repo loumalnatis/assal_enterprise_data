@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'assal_enterprise_data/context/find_by_employee_id'
+require 'assal_enterprise_data/context/employee/find_by_employee_id'
 require 'ostruct'
 
-describe AssalEnterpriseData::Context::FindByEmployeeId do
+describe AssalEnterpriseData::Context::Employee::FindByEmployeeId do
   let(:record1) { OpenStruct.new(
     emp_date:       Date.civil(2014, 1, 1),
     emp_first_name: "First",

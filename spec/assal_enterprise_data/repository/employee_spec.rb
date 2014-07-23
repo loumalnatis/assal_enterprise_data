@@ -30,4 +30,33 @@ describe AssalEnterpriseData::Repository::Employee do
       employee.emp_rate5 == 5.00
     end
   end
+
+  context '#find_all' do
+    it 'finds all employees' do
+      dataset << record1
+      employees = subject.find_all
+
+      employees.should be_a(Array)
+      employees.count.should == 1
+      employees.first.emp_first_name == 'First'
+    end
+  end
+
+  context '#create!' do
+    it 'creates a new employee record' do
+      params = {
+        emp_date: Date.civil(2014, 1, 1),
+        emp_first_name: "First",
+        emp_last_name: "Last",
+        emp_mi: nil,
+        emp_id: "123",
+        emp_rate1: 10.00
+      }
+
+      created_emp = subject.create!(params)
+      found_emp = subject.find_by_employee_id(created_emp.emp_id)
+
+      found_emp.should_not be_nil
+    end
+  end
 end

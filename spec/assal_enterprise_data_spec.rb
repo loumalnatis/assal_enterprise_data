@@ -10,7 +10,7 @@ describe AssalEnterpriseData do
   end
 
   it 'calls find_employee context' do
-    AssalEnterpriseData::Context::FindByEmployeeId.should_receive(:new).with(employee_repo).and_return(find_by_employee_id_context)
+    AssalEnterpriseData::Context::Employee::FindByEmployeeId.should_receive(:new).with(employee_repo).and_return(find_by_employee_id_context)
     find_by_employee_id_context.should_receive(:call)
     employee = AssalEnterpriseData.find_by_employee_id('123')
   end

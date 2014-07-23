@@ -1,4 +1,4 @@
-require 'assal_enterprise_data/context/find_by_employee_id'
+require 'assal_enterprise_data/context/employee/find_by_employee_id'
 
 module AssalEnterpriseData
 
@@ -10,7 +10,7 @@ module AssalEnterpriseData
     end
 
     def find_by_employee_id(employee_id)
-      AssalEnterpriseData::Context::FindByEmployeeId.new(employee_repo).call(employee_id)
+      AssalEnterpriseData::Context::Employee::FindByEmployeeId.new(employee_repo).call(employee_id)
     end
 
     private

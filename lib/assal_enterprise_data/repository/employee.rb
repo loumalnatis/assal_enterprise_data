@@ -16,6 +16,21 @@ module AssalEnterpriseData
         end
       end
 
+      def find_all
+        employees = []
+
+        dataset.each do |employee|
+          employees << AssalEnterpriseData::Entity::Employee.new(employee)
+        end
+
+        employees
+      end
+
+      def create!(params)
+        dataset.insert(params)
+        AssalEnterpriseData::Entity::Employee.new(params)
+      end
+
       private
 
       attr_reader :db_connection, :dataset
