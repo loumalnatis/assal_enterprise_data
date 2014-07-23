@@ -1,4 +1,4 @@
-require 'assal_enterprise_data/context/find_employee'
+require 'assal_enterprise_data/context/find_by_employee_id'
 
 module AssalEnterpriseData
 
@@ -9,8 +9,8 @@ module AssalEnterpriseData
       File.expand_path '../db/migrate', File.dirname(__FILE__)
     end
 
-    def find_employee(employee_id)
-      AssalEnterpriseData::Context::FindEmployee.new(employee_repo).call(employee_id)
+    def find_by_employee_id(employee_id)
+      AssalEnterpriseData::Context::FindByEmployeeId.new(employee_repo).call(employee_id)
     end
 
     private
