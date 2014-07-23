@@ -1,4 +1,6 @@
 require 'assal_enterprise_data/context/employee/find_by_employee_id'
+require 'assal_enterprise_data/context/employee/create'
+require 'assal_enterprise_data/context/employee/all'
 
 module AssalEnterpriseData
 
@@ -11,6 +13,14 @@ module AssalEnterpriseData
 
     def find_by_employee_id(employee_id)
       AssalEnterpriseData::Context::Employee::FindByEmployeeId.new(employee_repo).call(employee_id)
+    end
+
+    def employee_create(params)
+      AssalEnterpriseData::Context::Employee::Create.new(employee_repo).call(params)
+    end
+
+    def find_all_employees
+      AssalEnterpriseData::Context::Employee::All.new(employee_repo).call
     end
 
     private
