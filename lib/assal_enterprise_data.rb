@@ -1,6 +1,7 @@
 require 'assal_enterprise_data/context/employee/find_by_employee_id'
 require 'assal_enterprise_data/context/employee/create'
 require 'assal_enterprise_data/context/employee/all'
+require 'assal_enterprise_data/repository/employee'
 
 module AssalEnterpriseData
 
