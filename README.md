@@ -14,4 +14,4 @@ Coming soon!
 
 # Testing
 
-To run all tests simply run 'rake' by itself.
+To run tests use 'bundle exec rspec' in the root directory.
