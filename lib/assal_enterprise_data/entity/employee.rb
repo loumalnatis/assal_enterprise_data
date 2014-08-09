@@ -14,7 +14,17 @@ module AssalEnterpriseData
     ) do
 
       def initialize(fields)
-        super(*fields.values_at(*members))
+        super(*clean(fields).values_at(*members))
+      end
+
+      def clean(fields)
+        cleaned_fields = {}
+
+        fields.each_pair do |key, value|
+          cleaned_fields.merge!({key.downcase => value})
+        end
+
+        cleaned_fields
       end
     end
   end
