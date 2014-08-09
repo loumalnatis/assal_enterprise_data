@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    assal_enterprise_data (0.0.2)
+    assal_enterprise_data (0.0.3)
       rake (~> 10.1)
       sequel (= 4.8.0)
 
